@@ -1,7 +1,7 @@
 import requests
 import gettext
 import os
-from functools import partial
+from functools import partial, wraps
 from contextlib import suppress
 from typing import Dict
 
@@ -17,7 +17,6 @@ from ytmusicapi.mixins.library import LibraryMixin
 from ytmusicapi.mixins.playlists import PlaylistsMixin
 from ytmusicapi.mixins.uploads import UploadsMixin
 from ytmusicapi.auth.oauth import YTMusicOAuth, is_oauth
-
 
 class YTMusic(BrowsingMixin, SearchMixin, WatchMixin, ExploreMixin, LibraryMixin, PlaylistsMixin,
               UploadsMixin):
@@ -167,6 +166,17 @@ class YTMusic(BrowsingMixin, SearchMixin, WatchMixin, ExploreMixin, LibraryMixin
     def _check_auth(self):
         if not self.auth:
             raise Exception("Please provide authentication before using this function")
+
+    def _apply_auth_token(self, func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            access_token = kwargs.pop('access_token', None)
+            if access_token:
+                self.input_dict = {'authorization': f"Bearer {access_token}"}
+                self.is_oauth_auth = True
+            return func(self, *args, **kwargs)
+
+        return wrapper
 
     def __enter__(self):
         return self
