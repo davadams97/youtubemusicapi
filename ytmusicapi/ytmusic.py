@@ -171,7 +171,6 @@ class YTMusic(BrowsingMixin, SearchMixin, WatchMixin, ExploreMixin, LibraryMixin
         if not self.auth:
             raise Exception("Please provide authentication before using this function")
 
-
     def __enter__(self):
         return self
 
