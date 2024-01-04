@@ -25,9 +25,10 @@ youtubemusicapi: Fork from sigma67's unofficial API for YouTube Music
 youtubemusicapi is a Python 3 library to send requests to the YouTube Music API.
 It emulates YouTube Music web client requests using the user's cookie data for authentication.
 
-It improves on the authentication mechanism and allows users to implement their choice of auth flow (OAuth 2.0 PKCE
-recommended for web based applications) and decouples the library from using OAuth 2.0 for TV and Limited Input
-Devices.
+It improves on the authentication mechanism and allows users who implement their choice of auth flow (OAuth 2.0 PKCE
+recommended for web based applications) to pass the auth token.
+
+It decouples the library from using OAuth 2.0 for TV and Limited Input Devices.
 
 .. features
 
