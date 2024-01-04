@@ -1,7 +1,7 @@
 import requests
 import gettext
 import os
-from functools import partial, wraps
+from functools import partial
 from contextlib import suppress
 from typing import Dict
 
