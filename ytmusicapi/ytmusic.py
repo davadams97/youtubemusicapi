@@ -16,8 +16,7 @@ from ytmusicapi.mixins.explore import ExploreMixin
 from ytmusicapi.mixins.library import LibraryMixin
 from ytmusicapi.mixins.playlists import PlaylistsMixin
 from ytmusicapi.mixins.uploads import UploadsMixin
-from ytmusicapi.auth.oauth import YTMusicOAuth, is_oauth
-
+from ytmusicapi.auth.oauth import is_custom_oauth, is_oauth
 
 class YTMusic(BrowsingMixin, SearchMixin, WatchMixin, ExploreMixin, LibraryMixin, PlaylistsMixin,
               UploadsMixin):
@@ -86,7 +85,11 @@ class YTMusic(BrowsingMixin, SearchMixin, WatchMixin, ExploreMixin, LibraryMixin
         # see google cookie docs: https://policies.google.com/technologies/cookies
         # value from https://github.com/yt-dlp/yt-dlp/blob/master/yt_dlp/extractor/youtube.py#L502
         self.cookies = {'SOCS': 'CAI'}
-        if self.auth is not None:
+
+        if is_custom_oauth(self.auth):
+            self.input_dict = self.auth
+            self.is_oauth_auth = True
+        elif self.auth is not None:
             input_json = load_headers_file(self.auth)
             self.input_dict = CaseInsensitiveDict(input_json)
             self.input_dict['filepath'] = self.auth

@@ -20,9 +20,9 @@ on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
 # -- Project information -----------------------------------------------------
 
-project = 'ytmusicapi'
-copyright = '2022, sigma67'
-author = 'sigma67'
+project = 'youtubemusicapi'
+copyright = '2024, davadams97'
+author = 'davadams97'
 
 # The full version, including alpha/beta/rc tags
 version = __version__
