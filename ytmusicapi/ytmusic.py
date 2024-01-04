@@ -171,16 +171,6 @@ class YTMusic(BrowsingMixin, SearchMixin, WatchMixin, ExploreMixin, LibraryMixin
         if not self.auth:
             raise Exception("Please provide authentication before using this function")
 
-    def _apply_auth_token(self, func):
-        @wraps(func)
-        def wrapper(*args, **kwargs):
-            access_token = kwargs.pop('access_token', None)
-            if access_token:
-                self.input_dict = {'authorization': f"Bearer {access_token}"}
-                self.is_oauth_auth = True
-            return func(self, *args, **kwargs)
-
-        return wrapper
 
     def __enter__(self):
         return self
