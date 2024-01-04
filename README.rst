@@ -35,6 +35,7 @@ Features
 --------
 
 | **Authentication and authorization**:
+
 * inject token information from external client
 
 | **Browsing**:
