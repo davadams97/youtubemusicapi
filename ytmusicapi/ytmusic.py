@@ -86,7 +86,7 @@ class YTMusic(BrowsingMixin, SearchMixin, WatchMixin, ExploreMixin, LibraryMixin
         # value from https://github.com/yt-dlp/yt-dlp/blob/master/yt_dlp/extractor/youtube.py#L502
         self.cookies = {'SOCS': 'CAI'}
 
-        if is_custom_oauth(self.auth):
+        if self.auth is not None and is_custom_oauth(self.auth):
             self.input_dict = self.auth
             self.is_oauth_auth = True
         elif self.auth is not None:
