@@ -1,5 +1,5 @@
 youtubemusicapi: Fork from sigma67's unofficial API for YouTube Music
-############################################
+#####################################################################
 
 .. image:: https://img.shields.io/pypi/dm/ytmusicapi?style=flat-square
     :alt: PyPI Downloads
