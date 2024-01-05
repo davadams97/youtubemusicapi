@@ -31,7 +31,7 @@ recommended for web based applications) to pass the auth token.
 It decouples the library from using OAuth 2.0 for TV and Limited Input Devices.
 
 This package being used in production. I don't plan on updating the library with more features than
-I need. Contributions are open! 
+I need. Contributions are open!
 
 .. features
 
