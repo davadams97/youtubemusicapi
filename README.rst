@@ -1,27 +1,6 @@
 youtubemusicapi: Fork from sigma67's unofficial API for YouTube Music
 #####################################################################
 
-.. image:: https://img.shields.io/pypi/dm/ytmusicapi?style=flat-square
-    :alt: PyPI Downloads
-    :target: https://pypi.org/project/ytmusicapi/
-
-.. image:: https://badges.gitter.im/sigma67/ytmusicapi.svg
-   :alt: Ask questions at https://gitter.im/sigma67/ytmusicapi
-   :target: https://gitter.im/sigma67/ytmusicapi
-
-.. image:: https://img.shields.io/codecov/c/github/sigma67/ytmusicapi?style=flat-square
-    :alt: Code coverage
-    :target: https://codecov.io/gh/sigma67/ytmusicapi
-
-.. image:: https://img.shields.io/github/v/release/sigma67/ytmusicapi?style=flat-square
-    :alt: Latest release
-    :target: https://github.com/sigma67/ytmusicapi/releases/latest
-
-.. image:: https://img.shields.io/github/commits-since/sigma67/ytmusicapi/latest?style=flat-square
-    :alt: Commits since latest release
-    :target: https://github.com/sigma67/ytmusicapi/commits
-
-
 youtubemusicapi is a Python 3 library to send requests to the YouTube Music API.
 It emulates YouTube Music web client requests using the user's cookie data for authentication.
 
@@ -30,7 +9,7 @@ recommended for web based applications) to pass the auth token.
 
 It decouples the library from using OAuth 2.0 for TV and Limited Input Devices.
 
-This package being used in production. I don't plan on updating the library with more features than
+This package is being used in production. I don't plan on updating the library with more features than
 I need. Contributions are open!
 
 .. features
